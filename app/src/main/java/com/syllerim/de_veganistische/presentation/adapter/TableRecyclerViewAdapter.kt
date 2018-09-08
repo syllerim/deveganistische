@@ -8,7 +8,7 @@ import android.widget.TextView
 import com.syllerim.de_veganistische.R
 import com.syllerim.de_veganistische.data.Table
 
-class ForecastRecyclerViewAdapter(private val tables: List<Table>): RecyclerView.Adapter<ForecastRecyclerViewAdapter.TableViewHolder>()  {
+class TableRecyclerViewAdapter(private val tables: List<Table>): RecyclerView.Adapter<TableRecyclerViewAdapter.TableViewHolder>()  {
 
     var onClickListener: View.OnClickListener? = null
 
