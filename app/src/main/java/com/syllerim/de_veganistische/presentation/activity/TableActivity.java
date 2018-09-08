@@ -1,7 +1,9 @@
-package com.syllerim.de_veganistische;
+package com.syllerim.de_veganistische.presentation.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.syllerim.de_veganistische.R;
 
 public class TableActivity extends AppCompatActivity {
 
