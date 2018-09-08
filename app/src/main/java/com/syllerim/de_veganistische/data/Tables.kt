@@ -10,7 +10,8 @@ object Tables {
             Table(5,"Table 5", arrayOf(1, 3, 4), 24.2),
             Table(6,"Table 6", arrayOf(1, 3, 5), 23.1),
             Table(7,"Table 7", arrayOf(1, 2, 4, 5), 10.0),
-            Table(8,"Table 8", arrayOf(), 0.0)
+            Table(8,"Table 8", arrayOf(), 0.0),
+            Table(9,"Table 9", arrayOf(3, 5), 1.0)
     )
 
     var allItems = tables
