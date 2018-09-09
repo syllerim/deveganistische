@@ -30,7 +30,7 @@
             android:layout_marginStart="8dp"
             android:gravity="start"
             android:textAlignment="textStart"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintEnd_toStartOf="@+id/orderPrice"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             tools:text="Quinoa with paprika" />
@@ -44,7 +44,8 @@
             android:layout_marginRight="8dp"
             android:gravity="center_vertical"
             android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorAccent"
             app:layout_constraintEnd_toEndOf="parent"
             tools:text="10€" />
 

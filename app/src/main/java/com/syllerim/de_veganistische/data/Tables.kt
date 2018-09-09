@@ -4,7 +4,7 @@ object Tables {
 
     private val tables: List<Table> = listOf(
             Table(1,"Table 1", arrayOf(0, 2, 3, 4), 40.30),
-            Table(2,"Table 2", arrayOf(1, 5), 7.0 ),
+            Table(2,"Table 2", arrayOf(1, 4), 7.0 ),
             Table(3,"Table 3", arrayOf(1, 3, 4), 26.2),
             Table(4,"Table 4", arrayOf(1, 4), 10.4),
             Table(5,"Table 5", arrayOf(1, 3, 4), 24.2),

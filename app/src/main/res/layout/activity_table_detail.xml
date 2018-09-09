@@ -16,7 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="@string/app_name"/>
 
     </android.support.design.widget.AppBarLayout>
 
@@ -34,14 +35,16 @@
             android:id="@+id/tableNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:layout_marginTop="16dp"
             android:layout_gravity="center_horizontal"
-            tools:text="Table" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            tools:text="Table X" />
 
         <FrameLayout
             android:id="@+id/table_detail_list_fragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:layout_marginTop="32dp"/>
 
     </FrameLayout>
 

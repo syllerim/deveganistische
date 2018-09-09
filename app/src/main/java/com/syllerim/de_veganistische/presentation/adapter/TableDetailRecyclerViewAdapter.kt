@@ -34,7 +34,7 @@ class TableDetailRecyclerViewAdapter(private val dishes: Array<Int>): RecyclerVi
             // Update view with the model
             orderImage?.setImageResource(dish.icon)
             orderName?.text = dish.name
-            orderPrice?.text = dish.price.toString()
+            orderPrice?.text = dish.price.toString() + "€"
 
         }
     }
