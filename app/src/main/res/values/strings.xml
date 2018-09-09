@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">De Veganistische</string>
+    <string name="title_activity_table_detail">TableDetailActivity</string>
+    <string name="transition_to_detail">transition to detail</string>
 </resources>

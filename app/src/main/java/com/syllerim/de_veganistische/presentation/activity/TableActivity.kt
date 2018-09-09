@@ -27,7 +27,7 @@ class TableActivity : AppCompatActivity(), TableFragment.OnTableSelectedListener
     }
 
     override fun onTableSelected(position: Int) {
-//        startActivity(TableDetailActivity.intent(this, position))
+        startActivity(TableDetailActivity.intent(this, position))
     }
 
 }
