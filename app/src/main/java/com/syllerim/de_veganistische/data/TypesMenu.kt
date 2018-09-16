@@ -28,4 +28,6 @@ object TypesMenu {
     fun toArray() = menu.toTypedArray()
 
     fun allTypeMenu(index: Int) = menu[index]
+
+    fun typeMenu(id: Int) = allItems.filter { it.id == id }.first()
 }

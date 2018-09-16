@@ -16,11 +16,13 @@ import kotlinx.android.synthetic.main.activity_menu.*
 class MenuActivity : AppCompatActivity(), MenuFragment.OnMenuSelectedListener {
 
     companion object {
-        const val EXTRA_TYPE_MENU_INDEX = "EXTRA_TYPE_MENU_INDEX"
+        const val EXTRA_TYPE_MENU_ID = "EXTRA_TYPE_MENU_ID"
+        const val EXTRA_TABLE_ID = "EXTRA_TABLE_ID"
 
-        fun intent(context: Context, typeMenu: Int): Intent {
+        fun intent(context: Context, typeMenu: Int, tableId: Int): Intent {
             val intent = Intent(context, MenuActivity::class.java)
-            intent.putExtra(EXTRA_TYPE_MENU_INDEX, typeMenu)
+            intent.putExtra(EXTRA_TYPE_MENU_ID, typeMenu)
+            intent.putExtra(EXTRA_TABLE_ID, tableId)
             return intent
         }
     }
@@ -34,12 +36,11 @@ class MenuActivity : AppCompatActivity(), MenuFragment.OnMenuSelectedListener {
         if (findViewById<ViewGroup>(R.id.menu_fragment) != null) {
 
             if (supportFragmentManager.findFragmentById(R.id.menu_fragment) == null) {
-                val typeMenuIndex = intent.getIntExtra(EXTRA_TYPE_MENU_INDEX, 0)
-
-                var typeMenu = TypesMenu.allTypeMenu(typeMenuIndex)
+                val tmId = intent.getIntExtra(EXTRA_TYPE_MENU_ID, 0)
+                var typeMenu: TypeMenu = TypesMenu.typeMenu(tmId)
                 tableNameTextView?.text = typeMenu.name
 
-                val fragment = MenuFragment.newInstance(typeMenu.id)
+                val fragment = MenuFragment.newInstance(tmId)
                 supportFragmentManager.beginTransaction()
                         .add(R.id.menu_fragment, fragment)
                         .commit()
@@ -55,12 +56,14 @@ class MenuActivity : AppCompatActivity(), MenuFragment.OnMenuSelectedListener {
         toolbar.setNavigationOnClickListener(
                 object : View.OnClickListener {
                     override fun onClick(v: View) {
-                        startActivity(Intent(applicationContext, TypeMenuActivity::class.java))
+                        val tableId = intent.getIntExtra(TypeMenuActivity.EXTRA_TABLE_ID, -1)
+                        startActivity(TypeMenuActivity.intent(applicationContext, tableId))
                     }
                 })
     }
 
     override fun onMenuSelected(menuId: Int) {
-        startActivity(MenuDetailActivity.intent(this, menuId))
+        val tableId = intent.getIntExtra(EXTRA_TABLE_ID, -1)
+        startActivity(MenuDetailActivity.intent(this, menuId, tableId))
     }
 }

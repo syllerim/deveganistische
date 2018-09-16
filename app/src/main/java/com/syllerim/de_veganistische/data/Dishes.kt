@@ -72,4 +72,6 @@ object Dishes {
 
     fun allDishesOf(type: Int) = allItems.filter { it.typeMenu == type }
 
+    fun dish(id: Int) = allItems.filter { it.id == id }.first()
+
 }

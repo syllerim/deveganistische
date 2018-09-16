@@ -1,10 +1,14 @@
 package com.syllerim.de_veganistische.presentation.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
 import android.view.MenuItem
+import android.view.View
 import android.view.ViewGroup
 import com.syllerim.de_veganistische.R
+import com.syllerim.de_veganistische.data.Tables
 import com.syllerim.de_veganistische.presentation.fragment.TableFragment
 import kotlinx.android.synthetic.main.activity_table.*
 
@@ -31,14 +35,16 @@ class TableActivity : AppCompatActivity(), TableFragment.OnTableSelectedListener
 
     override fun onOptionsItemSelected(item: MenuItem?) : Boolean = when (item?.itemId) {
         R.id.menu -> {
-            startActivity(TypeMenuActivity.intent(this))
+            startActivity(TypeMenuActivity.intent(this, -1))
             true
         }
         else -> super.onOptionsItemSelected(item)
     }
 
     override fun onTableSelected(position: Int) {
-        startActivity(TableDetailActivity.intent(this, position))
+        val tableId = Tables.allItems[position].id
+        startActivity(TableDetailActivity.intent(this, tableId))
     }
+
 
 }

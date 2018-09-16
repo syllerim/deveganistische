@@ -9,14 +9,18 @@ import android.support.v7.widget.Toolbar
 import android.view.View
 import android.view.ViewGroup
 import com.syllerim.de_veganistische.R
+import com.syllerim.de_veganistische.data.TypesMenu
 import com.syllerim.de_veganistische.presentation.fragment.TypeMenuFragment
 import kotlinx.android.synthetic.main.activity_type_menu.*
 
 class TypeMenuActivity: AppCompatActivity(), TypeMenuFragment.OnTypeMenuSelectedListener {
 
     companion object {
-        fun intent(context: Context): Intent {
+        const val EXTRA_TABLE_ID = "EXTRA_TABLE_ID"
+
+        fun intent(context: Context, tableId: Int): Intent {
             val intent = Intent(context, TypeMenuActivity::class.java)
+            intent.putExtra(EXTRA_TABLE_ID, tableId)
             return intent
         }
     }
@@ -45,15 +49,15 @@ class TypeMenuActivity: AppCompatActivity(), TypeMenuFragment.OnTypeMenuSelected
         toolbar.setNavigationOnClickListener(
                 object : View.OnClickListener {
                     override fun onClick(v: View) {
-                        val intent = Intent(applicationContext, TableActivity::class.java)
-                        intent.setFlags(FLAG_ACTIVITY_CLEAR_TASK)
-                        startActivity(intent)
+                        val tableId = intent.getIntExtra(EXTRA_TABLE_ID, -1)
+                        startActivity(TableDetailActivity.intent(applicationContext, tableId))
                     }
                 })
     }
 
     override fun onTypeMenuSelected(position: Int) {
-        startActivity(MenuActivity.intent(this, position))
+        val tableId = intent.getIntExtra(EXTRA_TABLE_ID, -1)
+        startActivity(MenuActivity.intent(this, TypesMenu.allItems[position].id, tableId))
     }
 
 }
