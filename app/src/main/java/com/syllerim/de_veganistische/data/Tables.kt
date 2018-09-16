@@ -39,4 +39,13 @@ object Tables {
     fun table(id: Int) = Tables.allItems.filter { it.id == id }.first()
 
     fun allDishesForTable(id: Int) = Tables.allItems.filter { it.id == id }.first().dishes
+
+    fun total(tableId: Int): Double {
+        var sum = 0.0
+        var dishes = Tables.allItems.filter { it.id == tableId }.first().dishes
+        dishes.forEach {
+            sum += Dishes.dish(it).price
+        }
+        return sum
+    }
 }

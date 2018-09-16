@@ -72,7 +72,9 @@ class TableDetailActivity : AppCompatActivity(), TableDetailFragment.OnMenuSelec
 
                 val tableId = intent.getIntExtra(EXTRA_TABLE_ID, 0)
                 val table = Tables.table(tableId)
-                tableNameTextView?.text = table.name
+
+
+                tableNameTextView?.text = table.name + " - Total: " + String.format("%.2f", Tables.total(tableId)) + "€"
 
                 if (supportFragmentManager.findFragmentById(R.id.table_detail_list_fragment) == null) {
                     val fragment = TableDetailFragment.newInstance(tableId)
