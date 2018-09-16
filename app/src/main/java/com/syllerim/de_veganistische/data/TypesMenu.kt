@@ -2,7 +2,7 @@ package com.syllerim.de_veganistische.data
 
 import com.syllerim.de_veganistische.R
 
-object Menu {
+object TypesMenu {
 
     private val menu: List<TypeMenu> = listOf(
             TypeMenu(1, "Starters", R.drawable.ic_starters),

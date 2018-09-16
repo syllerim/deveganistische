@@ -8,7 +8,7 @@ data class Dish(var id: Int,
                 var icon: Int,
                 var price: Double,
                 var ingredients: Array<String>,
-                var alergenos: Array<String>,
+                var allergens: Array<String>,
                 var typeMenu: Int): Serializable {
     override fun toString() = name
 }

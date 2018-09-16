@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".presentation.activity.TableActivity"
+            android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/app_name">
             >
             <intent-filter>
@@ -19,11 +20,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- <activity android:name=".presentation.activity.TableDetailActivity" /> -->
+
         <activity
             android:name=".presentation.activity.TableDetailActivity"
             android:label="@string/title_activity_table_detail"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <activity
+            android:name=".presentation.activity.TypeMenuActivity"
+            android:label="@string/title_activity_type_menu"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <activity
+        android:name=".presentation.activity.MenuActivity"
+        android:label="@string/title_activity_menu"
+        android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <activity
+            android:name=".presentation.activity.MenuDetailActivity"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
     </application>
 
 </manifest>

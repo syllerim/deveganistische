@@ -12,6 +12,8 @@ import android.support.v4.app.Fragment
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.GridLayoutManager
 import android.view.*
+import com.syllerim.de_veganistische.presentation.activity.TableDetailActivity
+import com.syllerim.de_veganistische.presentation.activity.TypeMenuActivity
 import com.syllerim.de_veganistische.presentation.adapter.TableRecyclerViewAdapter
 import kotlinx.android.synthetic.main.fragment_table_list.*
 
@@ -94,20 +96,6 @@ class TableFragment : Fragment() {
         super.onDetach()
 
         onTableSelectedListener = null
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.itemId) {
-            R.id.menu -> {
-                // Open Menu View and Store the current Table Selected
-//                val dialog = SettingsDialog.newInstance(getTemperatureUnits(activity!!))
-//                dialog.setTargetFragment(this, REQUEST_SETTINGS)
-//                dialog.show(fragmentManager, null)
-
-                return true
-            }
-        }
-        return super.onOptionsItemSelected(item)
     }
 
     private fun setRecyclerViewClickListener() {
